@@ -1,11 +1,6 @@
 ## Installation 
+
 ```bash
-sudo apt install python3-gi
-sudo apt install libglib2.0-dev
-
+sudo apt-get install libxcb-xinerama0
+sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 ```
-
-
-
-sudo apt-get install libcairo2-dev pkg-config python3-dev libgirepository1.0-dev
-pip3 install PyGObject
