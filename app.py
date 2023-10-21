@@ -1,8 +1,9 @@
+import sys
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QTimer
 from PyQt6.QtGui import QIcon, QAction
-import sys
-import random # TODO to be removed
+
+from get_status import get_status
 
 
 class TrayApp:
@@ -10,6 +11,12 @@ class TrayApp:
         self.app = QApplication(sys.argv)
         self.tray_icon = QSystemTrayIcon(self.app)
         self.tray_menu = QMenu()
+
+        menu = QMenu()
+        check_action = menu.addAction("Check Now")
+        check_action.triggered.connect(lambda: print("ok"))
+        quit_action = menu.addAction("Quit")
+        quit_action.triggered.connect(lambda: print("ok"))
 
         print("Adding quit action")
         quit_action = QAction("Quit")
@@ -37,8 +44,17 @@ class TrayApp:
         print("Quitting application")
         self.app.quit()
 
-    def status(self):
-        return random.choice(["on", "off", "disabled"])
+    @staticmethod
+    def status():
+        status_code = None
+        match get_status():
+            case "Disconnected":
+                status_code = "disabled"
+            case "Connected":
+                status_code = "on"
+            case "Failed":
+                status_code = "off"
+        return status_code
 
     def update_status(self):
         new_status = self.status()
