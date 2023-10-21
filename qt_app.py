@@ -48,7 +48,7 @@ class TrayApp:
     def status():
         status_code = None
         match get_status():
-            case "Disconnected":
+            case "Not Connected":
                 status_code = "disabled"
             case "Connected":
                 status_code = "on"
