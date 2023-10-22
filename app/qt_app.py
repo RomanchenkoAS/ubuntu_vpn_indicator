@@ -3,8 +3,8 @@ from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PyQt6.QtCore import QTimer
 from PyQt6.QtGui import QIcon, QAction
 
-from get_status import get_status
-
+from .get_status import get_status
+from .get_icon import get_icon_path
 
 class TrayApp:
     def __init__(self):
@@ -63,11 +63,9 @@ class TrayApp:
 
     def update_icon(self, status):
         icon_paths = {
-            "on": "icon/on.png",
-            "off": "icon/off.png",
-            "disabled": "icon/disabled.png"
+            "on": get_icon_path("on.png"),
+            "off": get_icon_path("off.png"),
+            "disabled": get_icon_path("disabled.png"),
         }
         icon = QIcon(icon_paths.get(status, "disabled"))
-        if icon.isNull():
-            print(f"Warning: Icon for status {status} is null!")
         self.tray_icon.setIcon(icon)
