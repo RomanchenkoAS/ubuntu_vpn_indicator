@@ -62,6 +62,11 @@ After the installation, you can run the application by simply typing:
 vpn_indicator
 ```
 
+To run in background 
+```bash
+vpn_indicator > /dev/null 2>&1 & 
+```
+
 ### Development dependencies for qt version
 ```bash
 sudo apt-get install libxcb-xinerama0
