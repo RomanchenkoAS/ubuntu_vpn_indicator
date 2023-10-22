@@ -45,27 +45,31 @@ class TrayApp:
         self.app.quit()
 
     @staticmethod
-    def status():
-        status_code = None
+    def status() -> str:
+        status_code: str = ""
         match get_status():
-            case "Not Connected":
+            case "Not Connected" | "Disconnected":
                 status_code = "disabled"
             case "Connected":
                 status_code = "on"
             case "Failed":
                 status_code = "off"
+            case _:
+                status_code = "off"
+
         return status_code
 
-    def update_status(self):
-        new_status = self.status()
+    def update_status(self) -> None:
+        new_status: str = self.status()
         print(f"Updating status to: {new_status}")
         self.update_icon(new_status)
 
-    def update_icon(self, status):
+    def update_icon(self, status: str) -> None:
         icon_paths = {
             "on": get_icon_path("on.png"),
             "off": get_icon_path("off.png"),
             "disabled": get_icon_path("disabled.png"),
         }
+        # print(f"{icon_paths=}")
         icon = QIcon(icon_paths.get(status, "disabled"))
         self.tray_icon.setIcon(icon)
