@@ -6,9 +6,10 @@ authors = ["RomanchenkoAS <RomanchenkoAS@yandex.ru>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = ">=3.10,<3.13"
 PyQt6 = "^6.5" # for QT version only
-pystray = "^0.19.5"
+#pystray = "^0.19.5" # for pystray version only
+#pyside6 = "^6.6.0" # for pyside version only
 
 [tool.poetry.dev-dependencies]
 black = "^23.10.0"
