@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=VPN indicator for Nordlayer
+Exec=/usr/local/bin/vpn_indicator
+Type=Application
+X-GNOME-Autostart-enabled=true
