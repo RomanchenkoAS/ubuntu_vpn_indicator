@@ -1,6 +1,13 @@
 # VPN Indicator
 
-A simple tray app that indicates the VPN connection status.
+A simple tray app that indicates the Nordlayer VPN connection status by running $ nordlayer status periodically.
+
+### No VPN active
+![image](https://github.com/RomanchenkoAS/ubuntu_vpn_indicator/assets/119735427/4e16104e-2da2-4981-9ab5-c6f40c8aa215)
+### VPN failed 
+![image](https://github.com/RomanchenkoAS/ubuntu_vpn_indicator/assets/119735427/de996ff3-4158-4e73-b6e2-ef637c08f7a9)
+### VPN active
+![image](https://github.com/RomanchenkoAS/ubuntu_vpn_indicator/assets/119735427/006bd3e8-73c5-4a7c-bade-89b7920c8b1a)
 
 ## Installation from executable file
 
