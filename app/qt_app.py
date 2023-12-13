@@ -14,9 +14,9 @@ class TrayApp:
 
         menu = QMenu()
         check_action = menu.addAction("Check Now")
-        check_action.triggered.connect(lambda: print("ok"))
+        # check_action.triggered.connect(lambda: print("ok"))
         quit_action = menu.addAction("Quit")
-        quit_action.triggered.connect(lambda: print("ok"))
+        # quit_action.triggered.connect(lambda: print("ok"))
 
         # print("Adding quit action")
         quit_action = QAction("Quit")
@@ -41,7 +41,7 @@ class TrayApp:
         sys.exit(self.app.exec())
 
     def quit_app(self):
-        print("Quitting application")
+        # print("Quitting application")
         self.app.quit()
 
     @staticmethod
@@ -61,7 +61,7 @@ class TrayApp:
 
     def update_status(self) -> None:
         new_status: str = self.status()
-        print(f"Updating status to: {new_status}")
+        # print(f"Updating status to: {new_status}")
         self.update_icon(new_status)
 
     def update_icon(self, status: str) -> None:
