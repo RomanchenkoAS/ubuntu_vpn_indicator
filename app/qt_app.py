@@ -18,15 +18,15 @@ class TrayApp:
         quit_action = menu.addAction("Quit")
         quit_action.triggered.connect(lambda: print("ok"))
 
-        print("Adding quit action")
+        # print("Adding quit action")
         quit_action = QAction("Quit")
         quit_action.triggered.connect(self.quit_app)
         self.tray_menu.addAction(quit_action)
 
-        print("Setting context menu")
+        # print("Setting context menu")
         self.tray_icon.setContextMenu(self.tray_menu)
 
-        print("Displaying icon")
+        # print("Displaying icon")
         self.update_icon(self.status())
 
         # Set up a QTimer to run the `status` function periodically
@@ -37,7 +37,7 @@ class TrayApp:
         self.tray_icon.show()
 
     def run(self):
-        print("Entering event loop")
+        # print("Entering event loop")
         sys.exit(self.app.exec())
 
     def quit_app(self):

@@ -19,11 +19,12 @@ class TrayApp:
         return Image.open(image_path)
 
     def on_check(self, icon, item):
-        print("ok")
+        # print("ok")
+        pass
 
     def exit_action(self, icon, item):
         icon.stop()
-        print("Quitting application")
+        # print("Quitting application")
 
     def setup(self, icon):
         self.update_icon("disabled")  # Set initial icon
@@ -37,7 +38,7 @@ class TrayApp:
 
     def update_status(self):
         new_status = self.get_status_code()
-        print(f"Updating status to: {new_status}")
+        # print(f"Updating status to: {new_status}")
         self.update_icon(new_status)
 
     def get_status_code(self):
